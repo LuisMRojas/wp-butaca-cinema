@@ -54,12 +54,22 @@ function butaca_admin_notice( $data ) {
  * [butaca_destacada lista="now_playing"]
  */
 function butaca_sc_featured( $atts ) {
-	$atts = shortcode_atts( array( 'lista' => 'now_playing', 'posicion' => 1 ), $atts, 'butaca_destacada' );
+	$atts = shortcode_atts( array( 'lista' => 'now_playing', 'posicion' => 0 ), $atts, 'butaca_destacada' );
 	$data = butaca_get_movies( $atts['lista'], 5 );
 	if ( empty( $data['movies'] ) ) {
 		return '';
 	}
-	$m = $data['movies'][ max( 0, min( count( $data['movies'] ) - 1, (int) $atts['posicion'] - 1 ) ) ];
+	if ( (int) $atts['posicion'] > 0 ) {
+		$m = $data['movies'][ min( count( $data['movies'] ) - 1, (int) $atts['posicion'] - 1 ) ];
+	} else {
+		// posicion="0": la mejor valorada entre las primeras cinco.
+		$m = $data['movies'][0];
+		foreach ( $data['movies'] as $cand ) {
+			if ( $cand['rating'] > $m['rating'] && $cand['backdrop'] ) {
+				$m = $cand;
+			}
+		}
+	}
 	ob_start();
 	?>
 	<section class="butaca-hero" style="--bg:url('<?php echo esc_url( $m['backdrop'] ? $m['backdrop'] : $m['poster'] ); ?>')">
