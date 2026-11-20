@@ -4,7 +4,9 @@
 
 **Butaca** es un tema de bloques creado desde cero que convierte WordPress en un sitio de cine: muestra la **cartelera actual de tu país**, los **próximos estrenos** con cuenta regresiva, un **top de populares**, un **buscador en vivo** y **fichas completas** (sinopsis, reparto, dirección y tráiler de YouTube) en una ventana modal. Todo se alimenta de la API de [The Movie Database (TMDB)](https://www.themoviedb.org/).
 
-### ▶ [Ver demo en vivo (WordPress Playground)](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/LuisMRojas/wp-butaca-cinema/main/blueprint.json)
+### 🌐 [Ver el sitio en vivo](https://luismrojas.github.io/wp-butaca-cinema/)
+
+¿Quieres explorar el panel de WordPress? [Abrir la demo con acceso de administrador](https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/LuisMRojas/wp-butaca-cinema/main/blueprint.json)
 
 > La demo corre en **modo demo** (sin clave de API) con 12 películas ficticias y pósters originales generados para el tema. Para ver la cartelera real, entra a **Ajustes → Butaca (TMDB)** y pega tu clave gratuita.
 
