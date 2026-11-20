@@ -1,0 +1,42 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.2",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"steps": [
+		{
+			"step": "setSiteLanguage",
+			"language": "es_ES"
+		},
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/LuisMRojas/wp-butaca-cinema",
+				"ref": "main",
+				"refType": "branch"
+			},
+			"options": {
+				"activate": true,
+				"targetFolderName": "butaca"
+			}
+		},
+		{
+			"step": "setSiteOptions",
+			"options": {
+				"blogname": "Butaca",
+				"blogdescription": "Cartelera de cine con la API de TMDB"
+			}
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/mu-plugins/sitio-publico.php",
+			"data": "<?php\n// Sitio público: los visitantes navegan como usuarios anónimos (sin barra de administración).\nif ( ! is_admin() ) {\n\tadd_filter( 'determine_current_user', '__return_zero', 99 );\n}\n"
+		}
+	]
+}
