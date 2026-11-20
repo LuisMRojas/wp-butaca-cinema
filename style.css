@@ -1,0 +1,15 @@
+/*
+Theme Name: Butaca
+Theme URI: https://github.com/LuisMRojas/wp-butaca-cinema
+Author: Luis M. Rojas
+Author URI: https://github.com/LuisMRojas
+Description: Tema de bloques para sitios de cine conectado a la API de TMDB. Muestra la cartelera actual por país, próximos estrenos con cuenta regresiva, ranking de populares, buscador en vivo y fichas con sinopsis, reparto y tráiler en una ventana modal. Incluye página de ajustes, caché y un modo demo con películas ficticias.
+Requires at least: 6.5
+Tested up to: 6.8
+Requires PHP: 7.4
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: butaca
+Tags: entertainment, full-site-editing, block-patterns, dark, grid-layout, portfolio
+*/
